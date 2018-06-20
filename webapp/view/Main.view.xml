@@ -1,0 +1,20 @@
+<mvc:View controllerName="be.wl.ui5lab.UI5LabDemoApp.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:cam="openui5.camera" xmlns:l="sap.ui.layout" xmlns:p="openui5.parallax">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<headerContent>
+					<Button icon="sap-icon://begin" press="onStartTour"/>
+				</headerContent>
+				<content>
+					<cam:Camera id="idCamera" width="800" height="600" snapshot="onSnapshot"/>
+					<l:Grid id="idGrid" defaultSpan="L3 M3 S3" class="sapUiSmallMarginTop" content="{/images}">
+						<l:content>
+							<Image src="{src}" width="100%" press="showImage"/>
+						</l:content>
+					</l:Grid>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

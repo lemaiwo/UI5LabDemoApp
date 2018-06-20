@@ -1,0 +1,107 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "be.wl.ui5lab.UI5LabDemoApp",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+
+		]
+	},
+
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "be.wl.ui5lab.UI5LabDemoApp.view.Main",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {},
+				"ui5lab.striptoastr":{},
+				"openui5.camera":{},
+				"ui5lab.wl.img":{},
+				"openui5.parallax":{},
+				"openui5.tour": {}
+			}
+		},
+		"resourceRoots":{
+			"ui5lab.striptoastr": "./libs/StripToastr",
+			"openui5.camera": "./libs/ui5camera",
+			"ui5lab.wl.img":"./libs/imageviewer",
+			"openui5.parallax":"./libs/parallax",
+			"openui5.tour": "./libs/tour"
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "be.wl.ui5lab.UI5LabDemoApp.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "be.wl.ui5lab.UI5LabDemoApp.view",
+				"controlAggregation": "pages",
+				"controlId": "idAppControl",
+				"clearControlAggregation": false
+			},
+			"routes": [{
+				"name": "RouteMain",
+				"pattern": "RouteMain",
+				"target": ["TargetMain"]
+			}],
+			"targets": {
+				"TargetMain": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "Main"
+				}
+			}
+		}
+	}
+}
